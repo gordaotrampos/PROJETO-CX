@@ -1,0 +1,145 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background: linear-gradient(to bottom, #f4f4f9, #eaeaea);
+    color: #333;
+  }
+  
+  .header {
+    background: #005ca9;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .logo {
+    max-height: 60px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Contêiner principal */
+  .main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 1rem;
+  }
+  
+  .success-container {
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .icon-container {
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    color: #28a745;
+  }
+  
+  .success-container h2 {
+    font-size: 1.8rem;
+    color: #005ca9;
+    margin-bottom: 1rem;
+  }
+  
+  .success-container p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #005ca9;
+  }
+  
+  .return-button {
+    background: #005ca9;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .return-button:hover {
+    background: #003d7a;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e6e6e6;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .success-container {
+      padding: 1.5rem;
+    }
+  
+    .success-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .success-container p {
+      font-size: 0.95rem;
+    }
+  
+    .return-button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .success-container {
+      padding: 1rem;
+    }
+  
+    .success-container h2 {
+      font-size: 1.3rem;
+    }
+  
+    .success-container p {
+      font-size: 0.9rem;
+    }
+  
+    .return-button {
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  

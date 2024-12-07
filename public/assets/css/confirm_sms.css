@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background: #f4f4f9;
+    color: #333;
+  }
+  
+  .header {
+    background: #005ca9;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .logo {
+    max-height: 60px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Altura da tela menos o header */
+  }
+  
+  .sms-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .sms-container h2 {
+    font-size: 1.5rem;
+    color: #005ca9;
+    margin-bottom: 1rem;
+  }
+  
+  .sms-container p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sms-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .sms-container input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .actions button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .actions .cancel {
+    background: #ccc;
+    color: #333;
+  }
+  
+  .actions .cancel:hover {
+    background: #bbb;
+  }
+  
+  .actions .confirm {
+    background: #005ca9;
+    color: #fff;
+  }
+  
+  .actions .confirm:hover {
+    background: #003d7a;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e6e6e6;
+    font-size: 0.9rem;
+  }
+  

